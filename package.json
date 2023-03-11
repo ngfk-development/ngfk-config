@@ -1,0 +1,34 @@
+{
+  "name": "ngfk-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/ngfk-development/ngfk-config#readme",
+  "bugs": {
+    "url": "https://github.com/ngfk-development/ngfk-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngfk-development/ngfk-config.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "workspaces": [
+    "package/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -tv run build",
+    "format": "yarn workspaces foreach exec sort-package-json && prettier --write **/*",
+    "test:format": "yarn workspaces foreach exec sort-package-json --check && prettier --check **/*"
+  },
+  "prettier": "@ngfk/config-prettier",
+  "devDependencies": {
+    "@ngfk/config-prettier": "workspace:*",
+    "prettier": "^2.8.4",
+    "sort-package-json": "^2.4.1",
+    "typescript": "^4.9.5"
+  },
+  "packageManager": "yarn@3.4.1"
+}
