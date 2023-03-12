@@ -1,6 +1,6 @@
 {
   "name": "ngfk-config",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "",
   "keywords": [],
@@ -15,13 +15,12 @@
   "license": "ISC",
   "author": "",
   "main": "index.js",
-  "workspaces": [
-    "package/*"
-  ],
   "scripts": {
-    "build": "yarn workspaces foreach -tv run build",
-    "format": "yarn workspaces foreach exec sort-package-json && prettier --write **/*",
-    "test:format": "yarn workspaces foreach exec sort-package-json --check && prettier --check **/*"
+    "build": "pnpm run -r build",
+    "format": "pnpm -r exec -- sort-package-json && prettier --write **/*",
+    "publish": "pnpm run build",
+    "preinstall": "npx only-allow pnpm",
+    "test:format": "sort-package-json && pnpm -r exec -- sort-package-json --check && prettier --check **/*"
   },
   "prettier": "@ngfk/config-prettier",
   "devDependencies": {
@@ -29,6 +28,5 @@
     "prettier": "^2.8.4",
     "sort-package-json": "^2.4.1",
     "typescript": "^4.9.5"
-  },
-  "packageManager": "yarn@3.4.1"
+  }
 }

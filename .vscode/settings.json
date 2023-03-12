@@ -10,7 +10,8 @@
     "**/node_modules": true,
 
     ".gitignore": true,
+    ".npmrc": true,
     ".prettierignore": true,
-    ".yarnrc.yml": true
+    "pnpm-lock.yaml": true
   }
 }
