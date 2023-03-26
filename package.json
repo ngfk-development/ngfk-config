@@ -1,8 +1,8 @@
 {
   "name": "ngfk-config",
   "version": "0.0.1",
-  "private": true,
   "description": "",
+  "private": true,
   "keywords": [],
   "homepage": "https://github.com/ngfk-development/ngfk-config#readme",
   "bugs": {
@@ -18,13 +18,12 @@
   "scripts": {
     "build": "pnpm run -r build",
     "format": "pnpm -r exec -- sort-package-json && prettier --write **/*",
-    "publish": "pnpm run build",
+    "publish": "pnpm run build && pnpm -r publish",
     "preinstall": "npx only-allow pnpm",
     "test:format": "sort-package-json && pnpm -r exec -- sort-package-json --check && prettier --check **/*"
   },
-  "prettier": "@ngfk/config-prettier",
+  "prettier": "./package/prettier/dist/index.js",
   "devDependencies": {
-    "@ngfk/config-prettier": "workspace:*",
     "prettier": "^2.8.4",
     "sort-package-json": "^2.4.1",
     "typescript": "^4.9.5"
